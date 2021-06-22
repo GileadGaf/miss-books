@@ -1,8 +1,15 @@
 .book-filter {
-    margin: 10px;
+    margin: 20px;
     display: grid;
-    align-content: center;
-    justify-content: center;
+    border: 2px solid;
+    padding: 20px;
+    width: 50%;
+    justify-items: center;
+    margin: auto;
+}
+
+.book-filter input {
+    width: 170px;
 }
 
 .book-filter .prices-filter {

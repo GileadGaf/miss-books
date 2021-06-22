@@ -12,7 +12,6 @@ export default {
     `,
     methods: {
         remove(reviewId) {
-            // var isAccepted=confirm
             console.log('removing...');
             this.$emit('remove', reviewId);
         },

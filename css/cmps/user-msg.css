@@ -10,6 +10,10 @@
     border: 3px solid;
 }
 
+.user-msg .link {
+    color: #292929;
+}
+
 .user-msg.success {
     color: Green;
 }

@@ -1,13 +1,22 @@
 export const utilitiesService = {
-    getDeepCopy,
+    debounce,
     makeId
 }
 
-function getDeepCopy(obj) {
-    var strObj = JSON.stringify(obj);
-    return JSON.parse(strObj);
+function debounce(func, wait = 2000) {
+    let timeout;
 
-}
+    return function executedFunction(...args) {
+        const later = () => {
+            console.log('Go search!');
+            clearTimeout(timeout);
+            func(...args);
+        };
+
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+};
 
 function makeId(length = 11) {
     var text = "";

@@ -3,16 +3,15 @@ export default {
     <section class="book-filter">
     <h2> Find books by: </h2>
         <label>Title:</label>
-        <input v-model="filterBy.title" type="text"  placeholder="Search..."> 
+        <input v-model="filterBy.title" type="text" @input="filter"  placeholder="Search..."> 
 
         Price
         From
         <section class="prices-filter">
-       <input v-model.number="filterBy.minPrice" type="number" placeholder="minimum price" />
+       <input v-model.number="filterBy.minPrice" type="number" @input="filter"  placeholder="minimum price" />
        to
-        <input v-model.number="filterBy.maxPrice" type="number" placeholder="maximum price" />
+        <input v-model.number="filterBy.maxPrice" type="number" @input="filter"  placeholder="maximum price" />
       </section>
-<button @click="filter" class="btn-filter">Find my books </button>
     </section>
     `,
     data() {
@@ -26,8 +25,6 @@ export default {
     },
     methods: {
         filter() {
-            console.log(this.filterBy);
-
             this.$emit('filtered', this.filterBy);
         }
     }

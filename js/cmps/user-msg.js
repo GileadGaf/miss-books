@@ -5,7 +5,7 @@ export default {
         <div v-if="msg"  class="user-msg" :class="msg.type">
             <button @click="closeMsg">✖</button>
             <p>{{msg.txt}}</p>
-            <router-link :to="msg.link">{{msg.linkTitle}}</router-link>
+            <router-link :to="msg.link" class="link">{{msg.linkTitle}}</router-link>
         </div>
     `,
     data() {

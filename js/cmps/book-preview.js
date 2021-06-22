@@ -14,5 +14,7 @@ export default {
             var bookPrice = new Intl.NumberFormat((currency), { style: 'currency', currency }).format(price);
             return bookPrice;
         },
-    }
+    },
+    created() {},
+
 };

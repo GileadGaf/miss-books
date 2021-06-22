@@ -3,26 +3,48 @@
     color: #fff;
     /* padding: 10px; */
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: flex-start;
     padding: 20px;
 }
 
-.book-details p {
-    word-wrap: normal;
+.book-details * {
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.book-details h2,
+h3 {
+    padding: 5px;
+}
+
+.book-details nav {
+    height: 100%;
+}
+
+.long-text p {
     text-align: left;
     line-height: 1.5;
     padding: 10px;
+    max-width: 100%;
 }
 
 .book-details img {
-    width: 100px;
+    width: 200px;
 }
 
-.book-details button {
-    align-self: flex-end;
+.back-to-list {
+    height: fit-content;
+    padding: 10px;
+    border-radius: 5px;
 }
 
-.green {
+.back-to-list:hover {
+    color: gray;
+    opacity: 0.85;
+}
+
+back-to-list .green {
     color: green;
 }
 

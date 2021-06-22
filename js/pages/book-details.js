@@ -8,32 +8,40 @@ import { eventBus } from '../services/event-bus-service.js';
 export default {
     template: `
     <section v-if="book" class="book-details app-main">
-        <router-link to="/book"><button >X</button></router-link>
-        <section>
+        <router-link to="/book" class="back-to-list">Back</router-link>
+        
+        <main class="book-info" >
           <img :src="book.thumbnail" />
       <h2> {{book.title}}</h2>
         <h3> {{book.subtitle}}</h3>
-        <h3> Authors: {{authors}} </h3>
+        <h3 v-if="book.authors"> Authors: {{authors}} </h3>
         <h3 :class="priceColor" >Price: {{displayPrice}}</h3>
-        <long-text :txt="book.description"> </long-text>
-        <p> No. of pages:{{pagesCount}} </p> 
-        <p>Publish Date:{{publishedDate}} </p>
+        <long-text v-if="book.description" :txt="book.description"> </long-text>
+        <h4> No. of pages:{{pagesCount}} </h4> 
+        <h4>Publish Date:{{publishedDate}} </h4>
         <img v-if="book.listPrice.isOnSale" src="img/on-sale.png" /> 
-    </section>
-    <review-add @sentReview="addReview" ></review-add>
+        <nav>
+            <router-link :to="'/book/' + nextBookId" >Next Book</router-link>
+            <router-link :to="'/book/' + prevBookId" >Previous Book</router-link>
+        </nav>
+</main>
+ <review-add @sentReview="addReview" ></review-add>
     <review-list :reviews="getBookReviews" @remove="removeReview" > </review-list>
-    
-    </section>
+
+  
+</section>
     `,
     data() {
         return {
-            book: null
+            book: null,
+            nextBookId: null,
+            prevBookId: null
         };
     },
     created() {
-        const { bookId } = this.$route.params;
-        booksService.getBookById(bookId)
-            .then(book => this.book = book);
+        // const { bookId } = this.$route.params;
+        // booksService.getBookById(bookId)
+        //     .then(book => this.book = book);
     },
     computed: {
         displayPrice() {
@@ -70,7 +78,7 @@ export default {
             return this.book.publishedDate;
         },
         authors() {
-            return this.book.authors.join(' and ');
+            return this.book.authors ? this.book.authors.join(' and ') : '';
         },
 
         getBookReviews() {
@@ -107,6 +115,24 @@ export default {
             })
         }
     },
+    watch: {
+        '$route.params.bookId': {
+            immediate: true,
+            handler() {
+                const { bookId } = this.$route.params;
+                booksService.getBookById(bookId)
+                    .then(book => this.book = book);
+                booksService.getPrevNextBookId(bookId)
+                    .then(prevNext => {
+                        this.nextBookId = prevNext.nextBookId
+                        this.prevBookId = prevNext.prevBookId;
+                    });
+            },
+
+
+        }
+    },
+
     components: {
         longText,
         reviewAdd,

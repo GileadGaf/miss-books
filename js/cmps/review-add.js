@@ -3,19 +3,12 @@ export default {
        <section   class="review-add"> 
            <form @submit.prevent="submitReview">
                Full name:
-               <input ref="readerName" type="text" v-model="review.readerName" />
+               <input ref="readerName"   type="text" v-model="review.readerName" class="readerName" />
              <label >
                  <div class="rating">
              Rate the book:
              <span v-for="idx in 5"  @click="saveRate(idx)"  > {{getAStar(idx)}} </span>
          </div>
-                   <!-- <select v-model.number="review.rating" >
-                       <option value="1">1 </option>
-                       <option value="2">2 </option>
-                       <option value="3">3 </option>
-                       <option value="4">4 </option>
-                       <option value="5">5 </option>
-                   </select> -->
              </label>
              <label >
                  Read at:
@@ -67,7 +60,6 @@ export default {
 
         },
         getAStar(idx) {
-            console.log(idx + ' ' + this.review.rating);
             if (this.review.rating < idx) return '☆'
             else return '★';
         },
@@ -81,7 +73,6 @@ export default {
     },
     mounted() {
         const txtReaderName = this.$refs.readerName
-        txtReaderName.focus();
         txtReaderName.select();
 
     }

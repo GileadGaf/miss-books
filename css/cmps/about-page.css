@@ -6,3 +6,8 @@
     flex-direction: column;
     align-items: center;
 }
+
+.about-team,
+.about-services {
+    background-color: #292929;
+}

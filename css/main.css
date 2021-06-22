@@ -12,7 +12,18 @@
 
 body {
     text-align: center;
-    background-color: chocolate;
+    background: linear-gradient(#292929, gray, #fff);
+    color: #fff;
+    ;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
 }
 
 button {
@@ -28,8 +39,12 @@ a {
     font-size: 1.2rem;
 }
 
-.router-link-exact-active {
-    color: blue;
+a:visited {
+    color: #fff;
+}
+
+.router-link-active {
+    border: 2px solid;
 }
 
 
@@ -39,4 +54,45 @@ a {
     padding: 0;
     margin: 0;
     list-style: none;
+}
+
+.app-footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #094ad6;
+    font-size: 1.5rem;
+    margin-top: 30vh;
+}
+
+
+/*     */
+
+input {
+    border-radius: 10px;
+    margin: 0 5px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.add-books-link {
+    display: block;
+    width: 100px;
+    border: 1px solid;
+    margin: 20px auto;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #292929;
+}
+
+.add-books-link:hover {
+    color: rgb(175, 185, 81);
+    background-color: #0c0404;
+}
+
+.app-header {
+    margin-bottom: 20px;
 }
