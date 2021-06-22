@@ -1,0 +1,17 @@
+.review-add form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.review-add textarea {
+    max-width: 200px;
+    max-height: 500px;
+}
+
+.review-add .rating {
+    background-color: #fff;
+    color: #292929;
+    cursor: pointer;
+}

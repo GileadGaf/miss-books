@@ -1,0 +1,19 @@
+.user-msg {
+    background-color: #fff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    font-size: 1.5rem;
+    border-radius: 15px;
+    border: 3px solid;
+}
+
+.user-msg.success {
+    color: Green;
+}
+
+.user-msg.fail {
+    color: red;
+}

@@ -1,0 +1,42 @@
+@import './cmps/about-page.css';
+@import './cmps/book-list.css';
+@import './cmps/book-preview.css';
+@import './cmps/book-details.css';
+@import './cmps/book-filter.css';
+@import './cmps/book-app.css';
+@import './cmps/review-add.css';
+@import './cmps/user-msg.css';
+* {
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    background-color: chocolate;
+}
+
+button {
+    cursor: pointer;
+}
+
+.app-main {
+    height: 90vh;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.router-link-exact-active {
+    color: blue;
+}
+
+
+/* HELPERS */
+
+.clear-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}

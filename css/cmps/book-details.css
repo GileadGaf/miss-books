@@ -1,0 +1,31 @@
+.book-details {
+    background-color: #292929;
+    color: #fff;
+    /* padding: 10px; */
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.book-details p {
+    word-wrap: normal;
+    text-align: left;
+    line-height: 1.5;
+    padding: 10px;
+}
+
+.book-details img {
+    width: 100px;
+}
+
+.book-details button {
+    align-self: flex-end;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
